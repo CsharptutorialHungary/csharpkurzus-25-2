@@ -4,7 +4,7 @@ Console.WriteLine("Welcome to the RPN Calculator!");
 Console.Write("> ");
 string expression = Console.ReadLine() ?? string.Empty;
 
-ICalculator calculator = CalculatorFactory.Create();
+ICalculator calculator = CalculatorFactory.Create(infix: true);
 
 try
 {

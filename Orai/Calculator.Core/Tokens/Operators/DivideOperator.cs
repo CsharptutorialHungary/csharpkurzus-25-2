@@ -2,6 +2,10 @@
 
 public sealed class DivideOperator : BinaryOperator
 {
+    public override int Precedence => Precedences.Division;
+    
+    public override bool IsRightAssociative => true;
+
     protected override double Apply(double left, double right)
         => left / right;
 }

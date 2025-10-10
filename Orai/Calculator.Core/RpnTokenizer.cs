@@ -8,11 +8,11 @@ using static System.StringSplitOptions;
 
 namespace Calculator.Core;
 
-internal class Tokenizer : ITokenizer
+internal class RpnTokenizer : ITokenizer
 {
     private readonly Dictionary<string, IToken> _table;
 
-    public Tokenizer()
+    public RpnTokenizer()
     {
         _table = new Dictionary<string, IToken>()
         {

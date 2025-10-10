@@ -20,6 +20,7 @@ internal class RpnTokenizer : ITokenizer
             ["-"] = new SubtractOperator(),
             ["*"] = new MultiplyOperator(),
             ["/"] = new DivideOperator(),
+            ["^"] = new PowerOperator(),
             ["sin"] = new SinusFunction(),
         };
     }

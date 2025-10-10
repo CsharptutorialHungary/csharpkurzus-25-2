@@ -30,10 +30,10 @@ internal sealed class InfixTokenizer : ITokenizer
             ["-"] = new SubtractOperator(),
             ["*"] = new MultiplyOperator(),
             ["/"] = new DivideOperator(),
+            ["^"] = new PowerOperator(),
             ["sin"] = new SinusFunction(),
         };
         _operatorChars = _table.Keys.SelectMany(c => c).ToHashSet();
-
     }
 
     public IEnumerable<IToken> Tokenize(string expression)
@@ -142,3 +142,4 @@ internal sealed class InfixTokenizer : ITokenizer
         }
     }
 }
+

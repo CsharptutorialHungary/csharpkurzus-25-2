@@ -3,7 +3,8 @@
 public sealed class SubtractOperator : BinaryOperator
 {
     public override int Precedence => Precedences.Subtraction;
-    public override bool IsRightAssociative => true;
+
+    public override bool IsRightAssociative => false;
 
     protected override double Apply(double left, double right)
         => left - right;

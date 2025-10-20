@@ -1,2 +1,5 @@
 # csharpkurzus-25-2
-SZTE C# kurzus őszi félév
+
+Az óra végén megbeszéltek alapján ide belinkelem a már létrehozott github repo-mat:
+
+https://github.com/TheArtiist/SmartLibrary_ProjektForAppDevelopment

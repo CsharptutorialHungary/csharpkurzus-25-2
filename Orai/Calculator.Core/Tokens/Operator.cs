@@ -1,4 +1,4 @@
-﻿namespace Calculator.Core.Tokens.Operators;
+﻿namespace Calculator.Core.Tokens;
 
 public abstract class Operator : IToken
 {

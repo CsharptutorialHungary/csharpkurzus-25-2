@@ -1,4 +1,4 @@
-﻿namespace Calculator.Core.Tokens.Operators;
+﻿namespace Calculator.Core.Tokens;
 
 public abstract class UnaryOperator : Operator
 {
@@ -10,12 +10,11 @@ public abstract class UnaryOperator : Operator
         }
 
         double value = stack.Pop();
+
         double result = Apply(value);
+
         stack.Push(result);
     }
 
     protected abstract double Apply(double value);
 }
-
-
-

@@ -1,4 +1,4 @@
-﻿namespace Calculator.Core.Tokens.Operators;
+﻿namespace Calculator.Core.Tokens;
 
 public abstract class BinaryOperator : Operator
 {
@@ -9,9 +9,11 @@ public abstract class BinaryOperator : Operator
             throw new InvalidOperationException("Not enough values on the stack.");
         }
 
-        double right = stack.Pop();
         double left = stack.Pop();
+        double right = stack.Pop();
+
         double result = Apply(left, right);
+
         stack.Push(result);
     }
 

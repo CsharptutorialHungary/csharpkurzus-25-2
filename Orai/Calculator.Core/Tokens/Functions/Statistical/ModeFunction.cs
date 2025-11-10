@@ -1,14 +1,10 @@
-﻿namespace Calculator.Core.Tokens.Operators;
+﻿namespace Calculator.Core.Tokens.Functions.Statistical;
 
+[Operator(Symbol = "mode")]
 internal class ModeFunction : GreedyOperator
 {
     protected override double Apply(IReadOnlyList<double> values)
     {
-        if (values.Count == 0)
-        {
-            throw new InvalidOperationException("No values to calculate mode.");
-        }
-
         return values
             .GroupBy(value => value)
             .OrderByDescending(group => group.Count())

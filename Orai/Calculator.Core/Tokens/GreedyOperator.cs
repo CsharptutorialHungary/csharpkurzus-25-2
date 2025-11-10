@@ -1,4 +1,4 @@
-﻿namespace Calculator.Core.Tokens.Operators;
+﻿namespace Calculator.Core.Tokens;
 
 internal abstract class GreedyOperator : Operator
 {
@@ -9,14 +9,10 @@ internal abstract class GreedyOperator : Operator
             throw new InvalidOperationException("Not enough values on the stack.");
         }
 
-        List<double> values = [];
-
-        while (stack.Count > 0)
-        {
-            values.Add(stack.Pop());
-        }
+        IReadOnlyList<double> values = stack.PopAll();
 
         double result = Apply(values);
+
         stack.Push(result);
     }
 

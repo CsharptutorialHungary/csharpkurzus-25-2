@@ -4,7 +4,9 @@ public static class CalculatorFactory
 {
     public static ICalculator Create()
     {
-        ITokenizer tokenizer = new Tokenizer();
+        ITokenRegistry tokenRegistry = new TokenRegistry();
+
+        ITokenizer tokenizer = new Tokenizer(tokenRegistry);
         INumberStack numberStack = new NumberStack();
 
         return new Calculator(tokenizer, numberStack);

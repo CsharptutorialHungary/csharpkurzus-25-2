@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Calculator.Core\Calculator.Core.csproj" />
+    <ProjectReference Include="..\Calculator.HTTP\Calculator.HTTP.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Calculator.HTTP;
 
@@ -111,44 +104,4 @@ public class HttpServer : IDisposable
             await SpecialHandlers.HandleServerError(stream, ex.Message);
         }
     }
-}
-
-internal static class SpecialHandlers
-{
-    internal static async Task HandleNotFound(NetworkStream stream)
-    {
-        const string message = "Not Found";
-
-        string response = $"""
-            HTTP/1.1 404 Not Found
-            Date: {DateTime.UtcNow:R}
-            Content-Type: text/plain; charset=utf-8
-            Content-Length: {Encoding.UTF8.GetByteCount(message)}
-
-            {message}
-            """;
-
-        using var writer = new StreamWriter(stream, Encoding.UTF8, leaveOpen: true);
-        await writer.WriteAsync(response);
-    }
-
-    internal static async Task HandleServerError(NetworkStream stream, string message)
-    {
-        string response = $"""
-            HTTP/1.1 500 Internal Server Error
-            Date: {DateTime.UtcNow:R}
-            Content-Type: text/plain; charset=utf-8
-            Content-Length: {Encoding.UTF8.GetByteCount(message)}
-
-            {message}
-            """;
-
-        using var writer = new StreamWriter(stream, Encoding.UTF8, leaveOpen: true);
-        await writer.WriteAsync(response);
-    }
-}
-
-public interface IRequestHandler
-{
-    Task<bool> HandlerRequest(HttpRequest request, NetworkStream responseStream, CancellationToken token);
 }

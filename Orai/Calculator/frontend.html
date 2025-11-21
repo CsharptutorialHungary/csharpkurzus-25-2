@@ -655,7 +655,7 @@
       const encodedExpr = encodeURIComponent(input);
 
       try {
-        const response = await fetch(`/calculate?expression=${encodedExpr}`);
+        const response = await fetch(`/evaluate?expression=${encodedExpr}`);
         if (!response.ok) {
           console.error(response.json());
           throw new Error("Network response was not ok");

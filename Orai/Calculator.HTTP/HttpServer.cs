@@ -10,15 +10,17 @@ public class HttpServer : IDisposable
     private readonly TcpListener _listener;
     private readonly SemaphoreSlim _semaphore;
     private readonly CancellationTokenSource _cancellationTokenSource;
+    private readonly List<IRequestHandler> _handlers;
 
     private bool _disposed;
 
-    public HttpServer(int port)
+    public HttpServer(int port, params List<IRequestHandler> handlers)
     {
         _port = port;
         _listener = new TcpListener(IPAddress.Any, port);
-        _semaphore = new SemaphoreSlim(10);
+        _semaphore = new SemaphoreSlim(3);
         _cancellationTokenSource = new CancellationTokenSource();
+        _handlers = handlers;
     }
 
     ~HttpServer()
@@ -95,7 +97,14 @@ public class HttpServer : IDisposable
         try
         {
             HttpRequest request = await HttpRequestParser.ParseAsync(stream, _port);
-
+            foreach (var handler in _handlers)
+            {
+                var isSuccessfull = await handler.HandlerRequest(request, stream, cancellationToken);
+                if (isSuccessfull)
+                {
+                    return;
+                }
+            }
             await SpecialHandlers.HandleNotFound(stream);
         }
         catch (Exception ex)

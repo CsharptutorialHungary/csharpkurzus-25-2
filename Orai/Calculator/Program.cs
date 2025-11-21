@@ -1,16 +1,42 @@
-﻿using Calculator.Core;
+﻿using System.Web;
+
+using Calculator.Core;
 using Calculator.HTTP;
 
-HttpServer server = new HttpServer(8080);
+var frontend = Path.Combine(AppContext.BaseDirectory, "frontend.html");
+
+HttpServer server = new HttpServer(8080, new HtmlRequestHandler("/", frontend), new CalculateHandler());
 server.Start();
 Console.ReadKey();
 server.Stop();
+
+internal class CalculateHandler : JsonRequestHandler<string>
+{
+    public CalculateHandler() : base("/evaluate")
+    {
+    }
+
+    public override Task<string> Handle(HttpRequest httpRequest)
+    {
+        var query = HttpUtility.ParseQueryString(httpRequest.Path.Query);
+        string? expression = query["expression"];
+        if (string.IsNullOrWhiteSpace(expression))
+        {
+            return Task.FromResult("");
+        }
+
+        ICalculator calculator = CalculatorFactory.Create();
+        var result = calculator.Calculate(expression);
+
+        return Task.FromResult(result.ToString());
+    }
+}
 
 //Console.WriteLine("Welcome to the RPN Calculator!");
 //Console.Write("> ");
 //string expression = Console.ReadLine() ?? string.Empty;
 
-//ICalculator calculator = CalculatorFactory.Create();
+//
 
 //try
 //{

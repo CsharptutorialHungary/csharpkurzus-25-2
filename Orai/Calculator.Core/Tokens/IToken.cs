@@ -1,7 +1,6 @@
-﻿namespace Calculator.Core.Tokens
+﻿namespace Calculator.Core.Tokens;
+
+public interface IToken
 {
-    public interface IToken
-    {
-        void Apply(INumberStack stack);
-    }
+    void Apply(INumberStack stack);
 }

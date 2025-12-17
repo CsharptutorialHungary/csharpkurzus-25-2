@@ -4,7 +4,7 @@ public abstract class UnaryOperator : Operator
 {
     public override void Apply(INumberStack stack)
     {
-        if (stack.Count != 1)
+        if (stack.Count >= 1)
         {
             throw new InvalidOperationException("Not enough values on the stack.");
         }

@@ -11,6 +11,8 @@ internal class TokenRegistry : ITokenRegistry
 
     public TokenRegistry() => _tokens = DiscoverTokens();
 
+    public IEnumerable<string> KnownTokenSymbols => _tokens.Keys;
+
     public bool TryGetToken(string symbol, [MaybeNullWhen(false)] out IToken token)
     {
         return _tokens.TryGetValue(symbol, out token);

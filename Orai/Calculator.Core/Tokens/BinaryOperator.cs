@@ -4,7 +4,7 @@ public abstract class BinaryOperator : Operator
 {
     public override void Apply(INumberStack stack)
     {
-        if (stack.Count != 2)
+        if (stack.Count >= 2)
         {
             throw new InvalidOperationException("Not enough values on the stack.");
         }

@@ -1,7 +1,7 @@
 ﻿namespace Calculator.Core.Tokens.Functions.Trigonometric;
 
 [Operator(Symbol = "sin")]
-public sealed class SineFunction : UnaryOperator
+public sealed class SineFunction : FunctionOperator
 {
     protected override double Apply(double value) => Math.Sin(value);
 }

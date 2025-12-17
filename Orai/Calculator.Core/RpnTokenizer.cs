@@ -8,7 +8,7 @@ using static System.StringSplitOptions;
 
 namespace Calculator.Core;
 
-internal class Tokenizer(ITokenRegistry registry) : ITokenizer
+internal class RpnTokenizer(ITokenRegistry registry) : ITokenizer
 {
     public IEnumerable<IToken> Tokenize(string expression)
     {

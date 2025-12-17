@@ -16,5 +16,7 @@ internal abstract class GreedyOperator : Operator
         stack.Push(result);
     }
 
+    public override int Precedence => Precedences.Function;
+
     protected abstract double Apply(IReadOnlyList<double> values);
 }

@@ -2,11 +2,17 @@
 
 public static class CalculatorFactory
 {
-    public static ICalculator Create()
+    public static ICalculator Create(bool infix = false)
     {
         ITokenRegistry tokenRegistry = new TokenRegistry();
+        ITokenizer tokenizer;
 
-        ITokenizer tokenizer = new Tokenizer(tokenRegistry);
+        if (infix)
+            tokenizer = new InfixTokenizer(tokenRegistry);
+
+        else
+            tokenizer = new RpnTokenizer(tokenRegistry);
+
         INumberStack numberStack = new NumberStack();
 
         return new Calculator(tokenizer, numberStack);

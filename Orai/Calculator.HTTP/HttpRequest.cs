@@ -24,4 +24,7 @@ public sealed class HttpRequest
                 : null;
         }
     }
+
+    public override string ToString()
+        => $"{Method} {Path} {Version}";
 }

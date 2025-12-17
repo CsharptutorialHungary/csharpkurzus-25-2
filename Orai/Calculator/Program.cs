@@ -3,12 +3,15 @@ using System.Globalization;
 using System.Net;
 using System.Web;
 
+using Calculator;
 using Calculator.Core;
 using Calculator.HTTP;
 
 var frontend = Path.Combine(AppContext.BaseDirectory, "frontend.html");
 
-HttpServer server = new HttpServer(8080, new HtmlRequestHandler("/", frontend), new CalculateHandler());
+var logger = new ConsoleLogger();
+
+HttpServer server = new HttpServer(8080, logger, new HtmlRequestHandler("/", frontend), new CalculateHandler());
 server.Start();
 Console.ReadKey();
 server.Stop();

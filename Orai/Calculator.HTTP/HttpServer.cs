@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
 
 namespace Calculator.HTTP;
@@ -7,6 +6,7 @@ namespace Calculator.HTTP;
 public class HttpServer : IDisposable
 {
     private readonly int _port;
+    private readonly ILogger _logger;
     private readonly TcpListener _listener;
     private readonly SemaphoreSlim _semaphore;
     private readonly CancellationTokenSource _cancellationTokenSource;
@@ -14,9 +14,10 @@ public class HttpServer : IDisposable
 
     private bool _disposed;
 
-    public HttpServer(int port, params List<IRequestHandler> handlers)
+    public HttpServer(int port, ILogger logger, params List<IRequestHandler> handlers)
     {
         _port = port;
+        _logger = logger;
         _listener = new TcpListener(IPAddress.Any, port);
         _semaphore = new SemaphoreSlim(3);
         _cancellationTokenSource = new CancellationTokenSource();
@@ -52,6 +53,7 @@ public class HttpServer : IDisposable
         if (!_disposed)
         {
             _listener.Start();
+            _logger.Info($"Server started on {_port}");
             Task.Run(ListenTask, _cancellationTokenSource.Token);
         }
         else
@@ -65,6 +67,7 @@ public class HttpServer : IDisposable
         ObjectDisposedException.ThrowIf(_disposed, this);
         _cancellationTokenSource.Cancel();
         _listener.Stop();
+        _logger.Info("Server stopped");
     }
 
     private async Task ListenTask()
@@ -77,6 +80,7 @@ public class HttpServer : IDisposable
                 await _semaphore.WaitAsync(_cancellationTokenSource.Token);
                 try
                 {
+                    _logger.Info($"Client connected: {client.Client.RemoteEndPoint}");
                     await HandleClient(client, _cancellationTokenSource.Token);
                 }
                 finally
@@ -85,9 +89,9 @@ public class HttpServer : IDisposable
                 }
             }
         }
-        catch (OperationCanceledException ex)
+        catch (OperationCanceledException)
         {
-            Debug.WriteLine(ex.Message);
+            _logger.Warning("Server is stopping");
         }
     }
 
@@ -102,14 +106,16 @@ public class HttpServer : IDisposable
                 var isSuccessfull = await handler.HandlerRequest(request, stream, cancellationToken);
                 if (isSuccessfull)
                 {
+                    _logger.Info($"Request handled by {handler.GetType().Name}");
                     return;
                 }
             }
             await SpecialHandlers.HandleNotFound(stream);
+            _logger.Warning($"No handler found for the request: {request}");
         }
         catch (Exception ex)
         {
-            Debug.WriteLine(ex.Message);
+            _logger.Error(ex.Message);
             await SpecialHandlers.HandleServerError(stream, ex.Message);
         }
     }

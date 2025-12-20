@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="GamblingSimulator.Core\GamblingSimulator.Core.csproj" Type="Classic C#" />
+  <Project Path="GamblingSimulator.Tests\GamblingSimulator.Tests.csproj" Type="Classic C#" />
+  <Project Path="GamblingSimulator/GamblingSimulator.csproj" />
+</Solution>

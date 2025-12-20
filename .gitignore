@@ -192,6 +192,8 @@ DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
 
+.idea
+.DS_Store
 # Click-Once directory
 publish/
 

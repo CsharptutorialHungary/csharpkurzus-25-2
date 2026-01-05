@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kvíz App</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f4f9; }
+        h1, h2 { color: #333; }
+        button { cursor: pointer; border: none; padding: 10px 15px; border-radius: 5px; color: white; font-weight: bold; }
+        .btn-primary { background-color: #007bff; }
+        .btn-success { background-color: #28a745; }
+        .btn-danger { background-color: #dc3545; }
+        .btn-secondary { background-color: #6c757d; }
+        .quiz-card { background: white; border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .question { margin-top: 15px; font-weight: bold; font-size: 1.1em; }
+        .options { margin-left: 10px; margin-top: 5px; }
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; }
+        input[type="text"] { border: 1px solid #ccc; border-radius: 4px; padding: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>Kvíz App</h1>
+
+    <div style="margin-bottom: 20px;">
+        <button onclick="showList()" class="btn-primary">Kvízek Listázása</button>
+        <button onclick="showCreateForm()" class="btn-success">+ Új Kvíz</button>
+    </div>
+
+    <hr>
+
+    <div id="quiz-list-section">
+        <h2>Elérhető Kvízek</h2>
+        <div id="quiz-list">
+            <p>Betöltés...</p>
+        </div>
+    </div>
+
+    <div id="create-quiz-section" style="display:none;">
+        <h2>Új Kvíz Létrehozása</h2>
+        
+        <div class="quiz-card">
+            <label><strong>Kvíz Címe:</strong></label><br>
+            <input type="text" id="new-quiz-title" placeholder="Pl. Természetismeret" style="width: 100%; padding: 8px; margin-top: 5px;">
+        </div>
+
+        <div id="new-questions-container">
+            </div>
+
+        <button onclick="addQuestionInput()" class="btn-primary" style="margin-top: 10px;">+ Kérdés Hozzáadása</button>
+        <br><br>
+        <hr>
+        <button onclick="saveNewQuiz()" class="btn-success" style="font-size: 1.1em;">Kvíz Mentése</button>
+        <button onclick="showList()" class="btn-secondary">Mégse</button>
+    </div>
+
+    <div id="active-quiz-section" style="display:none;">
+        <h2 id="quiz-title"></h2>
+        <form id="quiz-form">
+            <div id="questions-container"></div>
+            <br>
+            <button type="button" onclick="submitQuiz()" class="btn-success">Beküldés</button>
+            <button type="button" onclick="showList()" class="btn-secondary">Vissza</button>
+        </form>
+        <div id="result" style="margin-top: 20px; font-weight: bold; font-size: 1.2em;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

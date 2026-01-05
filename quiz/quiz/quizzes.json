@@ -1,0 +1,182 @@
+[
+  {
+    "Id": 1,
+    "Title": "Egyszer\u0171 Matek",
+    "Questions": [
+      {
+        "Text": "Mennyi 2 \u002B 2?",
+        "Options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "CorrectOptionIndex": 1
+      },
+      {
+        "Text": "Mennyi 10 / 2?",
+        "Options": [
+          "5",
+          "2",
+          "10",
+          "0"
+        ],
+        "CorrectOptionIndex": 0
+      },
+      {
+        "Text": "Mennyi 7 - 3?",
+        "Options": [
+          "5",
+          "4",
+          "3",
+          "2"
+        ],
+        "CorrectOptionIndex": 1
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Title": "Alapvet\u0151 Informatika",
+    "Questions": [
+      {
+        "Text": "Mit jelent a \u0027CPU\u0027?",
+        "Options": [
+          "Central Process Unit",
+          "Central Processing Unit",
+          "Computer Personal Unit",
+          "Control Program Utility"
+        ],
+        "CorrectOptionIndex": 1
+      },
+      {
+        "Text": "Melyik NEM programoz\u00E1si nyelv?",
+        "Options": [
+          "Java",
+          "Python",
+          "MySQL",
+          "C#"
+        ],
+        "CorrectOptionIndex": 2
+      },
+      {
+        "Text": "Mi az oper\u00E1ci\u00F3s rendszer feladata?",
+        "Options": [
+          "Hardver kezel\u00E9se",
+          "K\u00E9pek szerkeszt\u00E9se",
+          "Weboldalak k\u00E9sz\u00EDt\u00E9se",
+          "J\u00E1t\u00E9kok futtat\u00E1s\u00E1nak tilt\u00E1sa"
+        ],
+        "CorrectOptionIndex": 0
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Title": "\u00C1ltal\u00E1nos M\u0171velts\u00E9g",
+    "Questions": [
+      {
+        "Text": "Melyik orsz\u00E1g f\u0151v\u00E1rosa Berlin?",
+        "Options": [
+          "Ausztria",
+          "N\u00E9metorsz\u00E1g",
+          "Hollandia",
+          "Belgium"
+        ],
+        "CorrectOptionIndex": 1
+      },
+      {
+        "Text": "Ki festette a Mona Lis\u00E1t?",
+        "Options": [
+          "Van Gogh",
+          "Leonardo da Vinci",
+          "Michelangelo",
+          "Picasso"
+        ],
+        "CorrectOptionIndex": 1
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "Title": "Term\u00E9szetismeret",
+    "Questions": [
+      {
+        "Text": "Melyik a legnagyobb bolyg\u00F3 a Naprendszerben?",
+        "Options": [
+          "Mars",
+          "Szaturnusz",
+          "Jupiter",
+          "F\u00F6ld"
+        ],
+        "CorrectOptionIndex": 2
+      },
+      {
+        "Text": "Mi a v\u00EDz k\u00E9miai jele?",
+        "Options": [
+          "H2O",
+          "O2",
+          "CO2",
+          "He"
+        ],
+        "CorrectOptionIndex": 0
+      },
+      {
+        "Text": "Melyik \u00E1llat eml\u0151s?",
+        "Options": [
+          "K\u00EDgy\u00F3",
+          "C\u00E1pa",
+          "Delfin",
+          "B\u00E9ka"
+        ],
+        "CorrectOptionIndex": 2
+      },
+      {
+        "Text": "Melyik NEM fa?",
+        "Options": [
+          "T\u00F6lgy",
+          "Ny\u00EDr",
+          "Feny\u0151",
+          "R\u00F3zsa"
+        ],
+        "CorrectOptionIndex": 3
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Title": "K\u00F6zleked\u00E9si alapismeretek",
+    "Questions": [
+      {
+        "Text": "Mit jelent a piros l\u00E1mpa a k\u00F6zleked\u00E9si jelz\u0151l\u00E1mp\u00E1n?",
+        "Options": [
+          "Meg\u00E1ll\u00E1s",
+          "\u00D3vatos tov\u00E1bbhalad\u00E1s",
+          "Jobbra kanyarod\u00E1s k\u00F6telez\u0151",
+          "Els\u0151bbs\u00E9gad\u00E1s"
+        ],
+        "CorrectOptionIndex": 0
+      },
+      {
+        "Text": "Milyen j\u00E1rm\u0171 a ker\u00E9kp\u00E1r?",
+        "Options": [
+          "Motoros j\u00E1rm\u0171",
+          "Seg\u00E9dmotoros j\u00E1rm\u0171",
+          "Nem g\u00E9pi meghajt\u00E1s\u00FA j\u00E1rm\u0171",
+          "Aut\u00F3"
+        ],
+        "CorrectOptionIndex": 2
+      },
+      {
+        "Text": "Melyik oldalr\u00F3l el\u0151z\u00FCnk Magyarorsz\u00E1gon?",
+        "Options": [
+          "Bal",
+          "Jobb",
+          "Mindkett\u0151",
+          "Sehonnan"
+        ],
+        "CorrectOptionIndex": 0
+      }
+    ]
+  }
+]

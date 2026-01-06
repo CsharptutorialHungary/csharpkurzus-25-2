@@ -1,0 +1,51 @@
+@model MissingPetFinder.Models.Pet;
+@using System.Security.Claims;
+
+@{
+    var currentUserIdStr = Context.User.FindFirstValue(ClaimTypes.NameIdentifier);
+    int.TryParse(currentUserIdStr, out var currentUserId);
+}
+
+<div class="pet-card" id="pet-@Model.Id">
+    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <img src="@Model.ImageUrl" alt="Image of @Model.Name" />
+    }
+
+    <h3>@Model.Name (@Model.Type)</h3>
+    <p>Breed: <strong>@Model.Breed</strong>, Color: <strong>@Model.Color</strong></p>
+    <p>Last seen: <strong>@Model.DateLastSeen.ToShortDateString()</strong> in <strong>@Model.LocationLastSeen</strong>
+    </p>
+    <p>Contact: <strong>@Model.ContactEmail</strong></p>
+
+    <p>
+        Status:
+        @if (Model.IsFound)
+        {
+            <span class="status-found">Found</span>
+        }
+        else
+        {
+            <span class="status-missing">Missing</span>
+        }
+    </p>
+    @if (Model.UserId == currentUserId)
+    {
+        <label>
+            <input type="checkbox" hx-post="/Pets/ToggleStatus/@Model.Id" hx-target="closest .pet-card" hx-swap="outerHTML"
+                @(Model.IsFound ? "checked" : "") />
+            Mark as found
+        </label>
+
+        <button type="button" hx-get="/Pets/EditForm/@Model.Id" hx-target="body" hx-swap="beforeend">
+            Edit
+        </button>
+
+        <button type="button" hx-delete="/Pets/Delete/@Model.Id"
+            hx-on:htmx:after-request="if (event.detail.successful) this.closest('.pet-card').remove()">
+            Delete
+        </button>
+
+    }
+
+</div>

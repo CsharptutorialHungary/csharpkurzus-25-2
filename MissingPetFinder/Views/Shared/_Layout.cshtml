@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MissingPetFinder</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MissingPetFinder.styles.css" asp-append-version="true" />
+
+    @RenderSection("Styles", required: false)
+</head>
+
+<body>
+    <header>
+        <div class="title-container">
+            <h1><span>Pet</span>Finder</h1>
+        </div>
+        <nav class="navbar">
+            @if (User.Identity!.IsAuthenticated)
+            {
+                <form asp-controller="Auth" asp-action="Logout" method="post">
+                    <button type="submit">Logout</button>
+                </form>
+            }
+            else
+            {
+                <a href="/"
+                    class="@(ViewContext.RouteData.Values["Action"]!.ToString() == "Index" ? "active" : "")">Home</a>
+
+                <a href="/Auth/Login"
+                    class="@(ViewContext.RouteData.Values["Action"]!.ToString() == "Login" ? "active" : "")">Login</a>
+
+                <a href="/Auth/Register"
+                    class="@(ViewContext.RouteData.Values["Action"]!.ToString() == "Register" ? "active" : "")">Register</a>
+
+            }
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

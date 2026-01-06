@@ -1,0 +1,27 @@
+@model IEnumerable<MissingPetFinder.Models.Pet>
+
+<div class="home-container">
+    <h1>Missing Pets</h1>
+
+    <div id="pets-form-container">
+        @if (User.Identity!.IsAuthenticated)
+        {
+            <form hx-post="/Pets/Create" hx-target="#pets-form-container" hx-swap="innerHTML" class="pet-form">
+
+                <input type="text" name="Name" placeholder="Name" />
+                <input type="text" name="Type" placeholder="Type" />
+                <input type="text" name="Breed" placeholder="Breed" />
+                <input type="text" name="Color" placeholder="Color" />
+                <input type="text" name="LocationLastSeen" placeholder="Location" />
+                <input type="date" name="DateLastSeen" />
+
+                <label>Pet Image:</label>
+                <input type="file" name="ImageUrl" accept="image/*" />
+
+                <button type="submit">Add Pet</button>
+            </form>
+        }
+    </div>
+
+    @await Html.PartialAsync("_PetListPartial", Model)
+</div>

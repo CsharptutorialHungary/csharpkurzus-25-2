@@ -1,0 +1,8 @@
+@model IEnumerable<MissingPetFinder.Models.Pet>
+
+<div id="pet-list" hx-swap="outerHTML">
+    @foreach (var pet in Model)
+    {
+        @await Html.PartialAsync("_PetCardPartial", pet)
+    }
+</div>

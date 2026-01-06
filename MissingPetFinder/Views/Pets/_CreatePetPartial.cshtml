@@ -1,0 +1,14 @@
+@model MissingPetFinder.DTOs.PetDTO
+
+<form hx-post="/Pets/Create" hx-target="#pets-form-container" hx-swap="innerHTML" class="pet-form">
+    <input type="text" name="Name" placeholder="Name" value="@Model?.Name" />
+    <input type="text" name="Type" placeholder="Type" value="@Model?.Type" />
+    <input type="text" name="Breed" placeholder="Breed" value="@Model?.Breed" />
+    <input type="text" name="Color" placeholder="Color" value="@Model?.Color" />
+    <input type="text" name="LocationLastSeen" placeholder="Location" value="@Model?.LocationLastSeen" />
+    <input type="date" name="DateLastSeen" value="@Model?.DateLastSeen.ToString("yyyy-MM-dd")" />
+    <label>Pet Image:</label>
+    <input type="file" name="ImageUrl" accept="image/*" />
+
+    <button type="submit">Add Pet</button>
+</form>

@@ -1,0 +1,36 @@
+@model MissingPetFinder.Models.Pet
+
+<div class="modal-overlay">
+    <div class="modal">
+        <h2>Edit Pet</h2>
+
+        <form hx-post="/Pets/Edit/@Model.Id" hx-target="#pet-@Model.Id" hx-swap="outerHTML"
+            hx-on:htmx:after-request="if (event.detail.successful) closeModal()" enctype="multipart/form-data"
+            class="pet-form">
+
+            <input type="text" name="Name" value="@Model.Name" />
+            <input type="text" name="Type" value="@Model.Type" />
+            <input type="text" name="Breed" value="@Model.Breed" />
+            <input type="text" name="Color" value="@Model.Color" />
+            <input type="text" name="LocationLastSeen" value="@Model.LocationLastSeen" />
+            <input type="date" name="DateLastSeen" value="@Model.DateLastSeen.ToString("yyyy-MM-dd")" />
+            <input type="email" name="ContactEmail" value="@Model.ContactEmail" />
+
+            <label>Pet Image:</label>
+            <input type="file" name="ImageUrl" accept="image/*" />
+
+            <div class="modal-buttons">
+                <button type="submit">Save</button>
+                <button type="button" onclick="closeModal()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function closeModal()
+    {
+        document.querySelector('.modal-overlay')?.remove();
+    }
+
+</script>

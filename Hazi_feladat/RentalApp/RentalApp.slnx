@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="RentalApp.Core.Tests/RentalApp.Core.Tests.csproj" Id="c9f6de90-de32-43c8-bfb0-377448a88882" />
+  <Project Path="RentalApp.Core/RentalApp.Core.csproj" />
+  <Project Path="RentalApp/RentalApp.csproj" />
+</Solution>

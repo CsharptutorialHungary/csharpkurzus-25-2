@@ -1,0 +1,10 @@
+{
+  "Barcode": "123",
+  "Sports": ["Skiing", "Snowboarding"],
+  "Equipment type": "Ski helmet",
+  "Brand": "K2",
+  "Description": "Has extra attribs",
+  "ExtraAttrib1": null,
+  "ExtraAttrib2": "hello",
+  "ExtraAttrib3": 10
+}

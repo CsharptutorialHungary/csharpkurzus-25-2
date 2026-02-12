@@ -1,0 +1,80 @@
+[
+  {
+    "Name": "Bela",
+    "Score": 500,
+    "GameName": "Tetris",
+    "Date": "2025-12-04T14:49:44.0836388+01:00"
+  },
+  {
+    "Name": "Anna",
+    "Score": 750,
+    "GameName": "Pacman",
+    "Date": "2025-12-04T14:49:44.0878921+01:00"
+  },
+  {
+    "Name": "John",
+    "Score": 300,
+    "GameName": "Tetris",
+    "Date": "2025-12-04T14:49:44.0879024+01:00"
+  },
+  {
+    "Name": "Zoe",
+    "Score": 900,
+    "GameName": "Pacman",
+    "Date": "2025-12-04T14:49:44.0879029+01:00"
+  },
+  {
+    "Name": "Mike",
+    "Score": 450,
+    "GameName": "Tetris",
+    "Date": "2025-12-04T14:49:44.0879032+01:00"
+  },
+  {
+    "Name": "Eva",
+    "Score": 800,
+    "GameName": "Pacman",
+    "Date": "2025-12-04T14:49:44.0879047+01:00"
+  },
+  {
+    "Name": "Tom",
+    "Score": 600,
+    "GameName": "Tetris",
+    "Date": "2025-12-04T14:49:44.0879049+01:00"
+  },
+  {
+    "Name": "Lily",
+    "Score": 950,
+    "GameName": "Pacman",
+    "Date": "2025-12-04T14:49:44.0879051+01:00"
+  },
+  {
+    "Name": "Sam",
+    "Score": 400,
+    "GameName": "Tetris",
+    "Date": "2025-12-04T14:49:44.0879054+01:00"
+  },
+  {
+    "Name": "Nina",
+    "Score": 850,
+    "GameName": "Pacman",
+    "Date": "2025-12-04T14:49:44.0879058+01:00"
+  },
+  {
+    "Name": "Rob",
+    "Score": 700,
+    "GameName": "Tetris",
+    "Date": "2025-12-04T14:49:44.087906+01:00"
+  },
+  {
+    "Name": "Kate",
+    "Score": 1000,
+    "GameName": "Pacman",
+    "Date": "2025-12-04T14:49:44.0879062+01:00"
+  },
+  {
+    "Name": "Matyi",
+    "Score": 895,
+    "GameName": "Ninja",
+    "Date": "2025-12-04T22:43:40.7772768+01:00"
+  }
+]

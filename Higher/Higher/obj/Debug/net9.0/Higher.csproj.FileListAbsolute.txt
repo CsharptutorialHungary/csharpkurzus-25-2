@@ -1,0 +1,15 @@
+C:\Users\Szabi\source\repos\Higher\Higher\bin\Debug\net9.0\Higher.exe
+C:\Users\Szabi\source\repos\Higher\Higher\bin\Debug\net9.0\Higher.deps.json
+C:\Users\Szabi\source\repos\Higher\Higher\bin\Debug\net9.0\Higher.runtimeconfig.json
+C:\Users\Szabi\source\repos\Higher\Higher\bin\Debug\net9.0\Higher.dll
+C:\Users\Szabi\source\repos\Higher\Higher\bin\Debug\net9.0\Higher.pdb
+C:\Users\Szabi\source\repos\Higher\Higher\obj\Debug\net9.0\Higher.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Szabi\source\repos\Higher\Higher\obj\Debug\net9.0\Higher.AssemblyInfoInputs.cache
+C:\Users\Szabi\source\repos\Higher\Higher\obj\Debug\net9.0\Higher.AssemblyInfo.cs
+C:\Users\Szabi\source\repos\Higher\Higher\obj\Debug\net9.0\Higher.csproj.CoreCompileInputs.cache
+C:\Users\Szabi\source\repos\Higher\Higher\obj\Debug\net9.0\Higher.dll
+C:\Users\Szabi\source\repos\Higher\Higher\obj\Debug\net9.0\refint\Higher.dll
+C:\Users\Szabi\source\repos\Higher\Higher\obj\Debug\net9.0\Higher.pdb
+C:\Users\Szabi\source\repos\Higher\Higher\obj\Debug\net9.0\Higher.genruntimeconfig.cache
+C:\Users\Szabi\source\repos\Higher\Higher\obj\Debug\net9.0\ref\Higher.dll
+C:\Users\Szabi\source\repos\Higher\Higher\obj\Debug\net9.0\Higher.sourcelink.json

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <!-- This package provides Dependency Injection and a generic host -->
+	  <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MovieBox.Core\MovieBox.Core.csproj" />
+    <ProjectReference Include="..\MovieBox.Infrastructure\MovieBox.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
